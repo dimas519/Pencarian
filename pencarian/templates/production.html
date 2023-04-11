@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaTha Search Engine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/layout.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/production.css' %}" />
+
+    <link rel="icon" href="{% static 'img/logo.jpeg' %}" type="image/icon">
+    <script defer src="{% static 'js/production.js' %}"></script>
+
+    <style>
+        body {
+          background-image: url("{% static 'img/background.svg' %}");
+        }
+        </style>
+
+
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    
+    
+    
+
+    
+    <div class="d-sm-flex flex-column" id="workSpace">
+        <div class="container">
+            <div class="d-sm-flex justify-content-end">
+                <div>
+                <img src="{% static 'img/logo.svg' %}" id="logo" />
+                </div>
+            </div>
+
+            <div class="d-sm-flex justify-content-start">
+                <div>
+                <h1 id="title">PaTha Search Engine</h1>
+                </div>
+            </div>
+        </div>
+    
+            <div class="d-sm-flex justify-content-center" id="searchDiv">
+                <div class="">
+                    <input type="text" placeholder="Kata kunci pencarian" id="query" name="query">
+                </div>
+        
+                <div class="">
+                    <svg id="searchBtn" onclick="doQuery()" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="512" height="512" x="0" y="0" viewBox="0 0 118.783 118.783" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M115.97 101.597 88.661 74.286a47.75 47.75 0 0 0 7.333-25.488c0-26.509-21.49-47.996-47.998-47.996S0 22.289 0 48.798c0 26.51 21.487 47.995 47.996 47.995a47.776 47.776 0 0 0 27.414-8.605l26.984 26.986a9.574 9.574 0 0 0 6.788 2.806 9.58 9.58 0 0 0 6.791-2.806 9.602 9.602 0 0 0-.003-13.577zM47.996 81.243c-17.917 0-32.443-14.525-32.443-32.443s14.526-32.444 32.443-32.444c17.918 0 32.443 14.526 32.443 32.444S65.914 81.243 47.996 81.243z" fill="currentColor" data-original="#000000" class=""></path></g></svg>
+                </div>
+            </div>
+
+
+
+            <h4 id="tagPencarian" hidden>
+                HASIL PENCARIAN
+            </h4>
+            <p style="margin-left:2vw" id="timePencarian" hidden> test</p>
+            
+
+            <div class="justify-content-md-center d-none" id="spinner">
+
+                <div class="spinner-border text-secondary" id="loadProgress" style="width: 10rem; height: 10rem;;" role="status" >
+                  <span class="sr-only"></span>
+                </div>
+                  <img src="{% static 'img/logo.jpeg' %}" id="loadingIcon" />
+                  
+            </div>
+
+
+            <div class="d-none justify-content-center" id="kotakTabel" >
+                <div>
+                    {% for index, row in df.iterrows %}
+                        <div class="resultSet">
+                            <h6 class={{index}}>
+                            {{row.Judul}} - Paragraf {{row.noParagraf}}
+                            </h6>
+                            <p class={{index}}>
+                                {{row.Teks}}
+                            </p>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+</body>
+</html>
+

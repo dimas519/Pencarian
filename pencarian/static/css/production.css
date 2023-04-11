@@ -1,0 +1,55 @@
+#tagPencarian{
+    margin-top: 50px;
+    font-size: 18pt;
+    margin-left:1vw;
+
+}
+
+.resultSet{
+
+    padding: 10px 25px;
+    /* margin-left: 5vw;
+    margin-right: 5vw; */
+    max-width: 80vw;
+    min-width: 80vw;
+}
+
+/* .resultSet:nth-child(odd) {
+    background-color: #4da5ff;
+}
+
+.resultSet:nth-child(even) {
+    background-color: #b3d9ff;
+} */
+
+h6{
+    font-size: 14pt;
+    color:#3D5583;
+}
+
+.resultSet p{
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 13pt;
+    color:#545454;
+}
+
+#workSpace, #searchDiv{
+    width: 99vw !important;
+}
+
+
+#timePencarian, #tagPencarian{
+    padding:0vw 10vw;
+    color:#3D5583;
+}
+
+#kotakTabel{
+    margin-top:10px !important;
+    padding:0vw 10vw;
+
+}
+
+#spinner{
+    margin-top: 10%;
+}

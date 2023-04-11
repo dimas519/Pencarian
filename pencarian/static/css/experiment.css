@@ -1,0 +1,67 @@
+.head{
+    background-color:  #5B9BD5;
+    border: 1px solid white;
+    font-size:14pt;
+    padding: 15px 10px;
+    font-weight: normal;
+    color:white;
+}
+
+td{
+    border: 1px solid white;
+}
+
+.saveBtn{
+    margin: 20px 0px;
+    background-color: #5B9BD5;
+}
+
+td p{
+    padding: 5px 10px;
+    max-width: 1000px; 
+    word-wrap:break-word;
+    font-size:12pt;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #545454;
+}
+
+tr:nth-child(odd) {
+    background-color: #D2DEEF;
+}
+
+tr:nth-child(even) {
+    background-color: #EAEFF7;
+}
+
+
+tr:hover{
+    background-color: #999999 !important; 
+}
+
+#disclaimer{
+    font-size: 14pt;
+    color:#545454;
+}
+
+#spinner{
+    margin-top: 20%;
+}
+
+
+#notifSave svg{
+    color:#5B9BD5;
+    max-width: 100px;
+}
+
+#notifSave h5{
+    height: fit-content;
+}
