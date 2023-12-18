@@ -17,12 +17,12 @@ from os import path
 
 # UNCOMMENT KALAU MAU ONLINE
 dir_path =path.dirname(path.realpath(__file__))
-url = 'https://drive.google.com/file/d/1htZDKBIEpVYc9pdVHfr0Z032359Jdesn/view?usp=sharing'
-url = 'https://drive.google.com/uc?id=' + url.split('/')[-2]
-CATALOG = pd.read_csv(url)
+# url = 'https://drive.google.com/file/d/1htZDKBIEpVYc9pdVHfr0Z032359Jdesn/view?usp=sharing'
+# url = 'https://drive.google.com/uc?id=' + url.split('/')[-2]
+# CATALOG = pd.read_csv(url)
 
 # UNCOMMENT KALAU MAU OFFLINE
-# CATALOG = pd.read_csv(dir_path+"/CSV/targetBooks.csv")
+CATALOG = pd.read_csv(dir_path+"/CSV/targetBooks.csv")
 
 
 
@@ -31,11 +31,11 @@ CATALOG = pd.read_csv(url)
 
 
 # UNCOMMENT KALAU MAU ONLINE
-url = 'https://drive.google.com/uc?id=' + 'https://drive.google.com/file/d/1b27OWnP-UcJwUn6VjzDYR7YaJUGrSfsi/view?usp=sharing'.split('/')[-2]
-BOOK_LISTING = pd.read_csv(url)
+# url = 'https://drive.google.com/uc?id=' + 'https://drive.google.com/file/d/1b27OWnP-UcJwUn6VjzDYR7YaJUGrSfsi/view?usp=sharing'.split('/')[-2]
+# BOOK_LISTING = pd.read_csv(url)
 
 #UNCOMMENT KALAU MAU OFFLINE
-# BOOK_LISTING = pd.read_csv(dir_path+"/CSV/driveListing.csv")
+BOOK_LISTING = pd.read_csv(dir_path+"/CSV/driveListing.csv")
 
 
 
@@ -46,7 +46,7 @@ def getTitle(fileNo):
     # print('fileNo: ' + fileNo)
 
     result = CATALOG.loc[CATALOG['Text#'] == (fileNo)]['Title']
-    # print("Result: " + result)
+    print("Result: " + result)
     if (result.empty):
         title = 0
     else:

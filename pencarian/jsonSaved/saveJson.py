@@ -7,7 +7,7 @@ import time
 
 def save(jsonInput):
     saveDir=path.dirname(path.realpath(__file__))+"/unpulledJson/"
-    
+    print(saveDir)
     
     
     json_object = json.loads(jsonInput) 
@@ -20,7 +20,7 @@ def save(jsonInput):
     numberRetry=0;
     
     named_tuple = time.localtime() 
-    time_string = time.strftime("%Y:%m:%d:%H:%M:%S", named_tuple)
+    time_string = time.strftime("%Y-%m-%dT%H_%M_%S", named_tuple)
     
     
     
@@ -29,7 +29,7 @@ def save(jsonInput):
         identifier=''.join(random.choices(string.ascii_letters+ string.digits,k=10)) 
         
         
-        saveFileName="{}{}-{}-{}.json".format(saveDir,time_string,title,identifier)
+        saveFileName="{}{}-{}-{}.txt".format(saveDir,time_string,title,identifier)
         
         
         try:
@@ -46,129 +46,4 @@ def save(jsonInput):
             
             if(numberRetry==5):
                 return False;
-        
-    
-    
-    
-    
-    
-    
-    
-    
 
-    
-    
-
-
-
-jsonInput='''
-    {
-   "query": "adam smith",
-   "result": [
-      {
-         "noFile": "10888",
-         "noParagraf": "15863",
-         "relevan": true
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "16056",
-         "relevan": true
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "16249",
-         "relevan": true
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "16442",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "16635",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "16828",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17021",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17214",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17407",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17600",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17793",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "17986",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "18179",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "18372",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "18565",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "18758",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "18951",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "19144",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "19337",
-         "relevan": false
-      },
-      {
-         "noFile": "10888",
-         "noParagraf": "19530",
-         "relevan": false
-      }
-   ]
-}
-    '''
-    
-    
-y=save(jsonInput)
-print(y)

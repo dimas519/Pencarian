@@ -88,17 +88,27 @@ def main(query):
                 textList = text.split('\n')
             else:
                 textList = 0
+                
+        
+        
         
         if textList != 0:
             line = getContent.getLine(textList, lineNo).rstrip()
             if (not line):
                 line = '-'
         
+
+        print(title)
   
-        if (title != 0):
-            
-            # print({'fileID':str(fileNo) if fileNo != 'CatholicTheologyLagrange' else '10888', 'lineNo': str(lineNo), 'cosine': str(cosine), 'title': title, 'text': line})
+        if (title != 0):    
+            print(fileNo)
+            print(lineNo)
+            print(cosine)
+            print(title)
+            print(line)
+       
             df = df.append({'noFile':str(fileNo) if fileNo != 'CatholicTheologyLagrange' else '10888', 'noParagraf': str(lineNo), 'cosine': str(cosine), 'Judul': title, 'Teks': line}, ignore_index=True)
+
             
             idx += 1
     
@@ -119,4 +129,5 @@ if __name__ == "__main__":
 
     
     query = str(sys.argv[1])
-    main(query)
+    result=main(query)
+    print(result)

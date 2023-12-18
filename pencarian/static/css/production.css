@@ -32,6 +32,7 @@ h6{
     text-justify: inter-word;
     font-size: 13pt;
     color:#545454;
+    
 }
 
 #workSpace, #searchDiv{
@@ -51,5 +52,5 @@ h6{
 }
 
 #spinner{
-    margin-top: 10%;
+    margin-top: 3rem;
 }
